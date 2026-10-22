@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulta detalles de los productos de DeliHelados y pregunta por WhatsApp.">
+  <meta name="theme-color" content="#fff8f4">
+  <title>DeliHelados | Detalle de producto</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="page-detail">
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html" aria-label="DeliHelados, inicio">
+          <img src="../assets/images/logo.png" alt="" width="34" height="34">
+          <span>Deli<span>Helados</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Abrir navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link " href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link " href="about.html">Sobre nosotros</a></li>
+            <li class="nav-item"><a class="nav-link active" href="products.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link " href="contact.html">Contacto</a></li>
+          </ul>
+          <a class="btn btn-coral btn-sm header-whatsapp" href="https://wa.me/573243122025" target="_blank"
+            rel="noopener noreferrer">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> Pedir por WhatsApp
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+
+    <section class="detail-section section-pad">
+      <div class="container">
+        <a href="products.html" class="back-link"><i class="bi bi-arrow-left"></i> Volver a productos</a>
+        <div class="row g-5 align-items-center detail-main">
+          <div class="col-lg-7">
+            <div class="detail-image" id="detailImage"><img id="detailPhoto" src="../assets/images/helado_fresas.png"
+                alt="Helado de fresa"></div>
+          </div>
+          <div class="col-lg-5">
+            <span class="eyebrow" id="detailCategory">HELADOS</span>
+            <h1 class="display-title" id="detailName">Helado de Fresa Silvestre</h1>
+            <p class="detail-flavor" id="detailFlavor">Con trozos de fresa natural</p>
+            <div class="detail-divider"></div>
+            <p class="detail-description" id="detailDescription">Helado de fresa con una textura cremosa, suave y
+              agradable, acompañado de un sabor frutal refrescante.</p>
+            <div class="detail-price" id="detailPrice">$12.500</div>
+            <div class="detail-facts"><span><i class="bi bi-snow"></i> Mantener congelado</span><span><i
+                  class="bi bi-box-seam"></i> Presentación por consultar</span><span><i class="bi bi-geo-alt"></i>
+                Envíos en todo Sahagún</span></div>
+            <a class="btn btn-whatsapp btn-lg w-100 mt-4" id="detailWhatsApp" href="https://wa.me/573243122025"
+              target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Consultar por WhatsApp</a>
+            <a href="products.html" class="btn btn-outline-coral btn-lg w-100 mt-2">Volver al catálogo</a>
+            <p class="small muted-copy mt-3 mb-0">Los productos y precios son ejemplos visuales y deben confirmarse con
+              el negocio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="related-section section-pad">
+      <div class="container">
+        <div class="section-heading-row">
+          <h2 class="section-heading">Productos relacionados</h2><a href="products.html" class="text-link">Ver catálogo
+            <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="product-card h-100"><a href="detail.html?product=chocolate" class="product-image"><img
+                  src="../assets/images/helado_chocolate.png" alt="Helado de chocolate"></a>
+              <div class="product-info">
+                <h3><a href="detail.html?product=chocolate">Helado de Chocolate</a></h3>
+                <p>Sabor intenso a cacao.</p>
+                <div class="product-bottom"><strong>$15.000</strong><a class="btn btn-outline-coral btn-sm"
+                    href="detail.html?product=chocolate">Ver detalles</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="product-card h-100"><a href="detail.html?product=coco"
+                class="product-image image-coconut"><span class="coconut-illustration"><i
+                    class="bi bi-droplet"></i></span></a>
+              <div class="product-info">
+                <h3><a href="detail.html?product=coco">Paleta de Coco</a></h3>
+                <p>Cremosa y refrescante.</p>
+                <div class="product-bottom"><strong>$7.500</strong><a class="btn btn-outline-coral btn-sm"
+                    href="detail.html?product=coco">Ver detalles</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="product-card h-100"><a href="detail.html?product=mango" class="product-image"><img
+                  src="../assets/images/paleta_mangokiwi.png" alt="Paleta de mango y kiwi"></a>
+              <div class="product-info">
+                <h3><a href="detail.html?product=mango">Paleta de Mango y Kiwi</a></h3>
+                <p>Mezcla tropical refrescante.</p>
+                <div class="product-bottom"><strong>$6.000</strong><a class="btn btn-outline-coral btn-sm"
+                    href="detail.html?product=mango">Ver detalles</a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4 py-5">
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-brand" href="../index.html"><span class="brand-mark">D</span> DeliHelados</a>
+          <p class="footer-copy mt-3">Helados, paletas y turrones para disfrutar y compartir pequeños momentos dulces.
+          </p>
+        </div>
+        <div class="col-6 col-lg-2 col-md-3">
+          <h2 class="footer-title">Enlaces</h2>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="about.html">Sobre nosotros</a></li>
+            <li><a href="products.html">Productos</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3 col-md-3">
+          <h2 class="footer-title">Contacto</h2>
+          <ul class="footer-links footer-contact">
+            <li><i class="bi bi-geo-alt" aria-hidden="true"></i> Sahagún, Córdoba, Colombia</li>
+            <li><a href="https://wa.me/573243122025" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"
+                  aria-hidden="true"></i> +57 324 312 2025</a></li>
+            <li><a href="mailto:deliheladossahagun@gmail.com"><i class="bi bi-envelope" aria-hidden="true"></i>
+                deliheladossahagun@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h2 class="footer-title">Síguenos</h2>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© <span data-current-year>2026</span> DeliHelados. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+  <div class="floating-actions">
+    <button class="back-to-top" type="button" aria-label="Volver arriba" title="Volver arriba"><i
+        class="bi bi-chevron-up"></i></button>
+    <a class="whatsapp-float" href="https://wa.me/573243122025" target="_blank" rel="noopener noreferrer"
+      aria-label="Contactar a DeliHelados por WhatsApp"><i class="bi bi-whatsapp"></i></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
