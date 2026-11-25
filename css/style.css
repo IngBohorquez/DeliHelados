@@ -1440,3 +1440,151 @@ a.contact-info-card:hover {
 .detail-image.image-pistachio {
   background: linear-gradient(135deg, #e3e8bd, #8fa66c);
 }
+
+.weather-section {
+  padding: 35px 0;
+  background: #fff8f4;
+}
+
+.weather-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.85fr 1.5fr;
+  gap: 30px;
+  align-items: center;
+  padding: 28px 35px 42px;
+  background: linear-gradient(120deg, #fff0f0, #fff8f4 65%, #fde8e9);
+  border: 1px solid #f5dadd;
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(48, 36, 47, .05);
+}
+
+.weather-info {
+  padding-right: 25px;
+  border-right: 1px solid #efd9dc;
+}
+
+.weather-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--coral-dark);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+}
+
+.weather-temperature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  color: var(--ink);
+  font-family: "Nunito", sans-serif;
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.weather-temperature i {
+  color: #e9a64e;
+  font-size: 2.5rem;
+}
+
+.weather-unit {
+  align-self: flex-start;
+  margin-top: 10px;
+  font-size: 1.4rem;
+}
+
+.weather-info > p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.weather-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  color: var(--coral-dark);
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.weather-message h3 {
+  margin: 0 0 7px;
+  color: var(--ink);
+  font-size: 1.35rem;
+}
+
+.weather-message p {
+  max-width: 530px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.weather-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--coral-dark);
+  font-size: .85rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: gap .2s ease;
+}
+
+.weather-link:hover {
+  color: var(--coral);
+  gap: 12px;
+}
+
+.weather-footer {
+  position: absolute;
+  right: 25px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #a18d91;
+  font-size: .7rem;
+}
+
+@media (max-width: 767.98px) {
+  .weather-section {
+    padding: 25px 0;
+  }
+
+  .weather-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 23px 22px 48px;
+  }
+
+  .weather-info {
+    padding: 0 0 17px;
+    border-right: none;
+    border-bottom: 1px solid #efd9dc;
+  }
+
+  .weather-temperature {
+    font-size: 3rem;
+  }
+
+  .weather-message h3 {
+    font-size: 1.2rem;
+  }
+
+  .weather-footer {
+    right: 15px;
+    bottom: 12px;
+    font-size: .65rem;
+  }
+  
+}

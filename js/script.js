@@ -155,4 +155,144 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     document.title = `${product.name} | DeliHelados`;
   }
+
+  const weatherTemperature = document.getElementById("weatherTemperature");
+
+  if (weatherTemperature) {
+    const API_URL = "https://api.open-meteo.com/v1/forecast?latitude=8.94944&longitude=-75.44778&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code&timezone=America%2FBogota";
+
+    const weatherIcon = document.getElementById("weatherIcon");
+    const weatherCondition = document.getElementById("weatherCondition");
+    const weatherTitle = document.getElementById("weatherTitle");
+    const weatherMessage = document.getElementById("weatherMessage");
+    const weatherUpdated = document.getElementById("weatherUpdated");
+
+    function getWeatherDescription(code) {
+
+      if (code === 0) return {
+        description: "Cielo despejado",
+        icon: "bi-sun-fill"
+      };
+
+      if ([1, 2].includes(code)) return {
+        description: "Parcialmente nublado",
+        icon: "bi-cloud-sun-fill"
+      };
+
+      if (code === 3) return {
+        description: "Cielo nublado",
+        icon: "bi-clouds-fill"
+      };
+
+      if ([45, 48].includes(code)) return {
+        description: "Neblina",
+        icon: "bi-cloud-fog-fill"
+      };
+
+      if ([51, 53, 55, 56, 57].includes(code)) return {
+        description: "Llovizna",
+        icon: "bi-cloud-drizzle-fill"
+      };
+
+      if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return {
+        description: "Lluvia",
+        icon: "bi-cloud-rain-heavy-fill"
+      };
+
+      if ([71, 73, 75, 77, 85, 86].includes(code)) return {
+        description: "Nieve",
+        icon: "bi-cloud-snow-fill"
+      };
+
+      if ([95, 96, 99].includes(code)) return {
+        description: "Tormenta eléctrica",
+        icon: "bi-cloud-lightning-rain-fill"
+      };
+
+      return {
+        description: "Condiciones variables",
+        icon: "bi-cloud-fill"
+      };
+    }
+
+    function getWeatherMessage(temperature) {
+
+      if (temperature >= 32) {
+        return {
+          title: "¡Uff, qué calor hace!",
+          message: "El calor está con toda en Sahagún. ¡Ven por tu helado favorito y date un gustico refrescante con DeliHelados!"
+        };
+      }
+
+      if (temperature >= 28) {
+        return {
+          title: "Un dia soleado",
+          message: "¿Qué tal una paleta bien deliciosa para disfrutar el día?"
+        };
+      }
+
+      if (temperature >= 20) {
+        return {
+          title: "El clima es agradable",
+          message: "Disfruta de nuestros deliciosos turrones"
+        };
+      }
+
+    }
+
+    async function loadWeather() {
+
+      try {
+        weatherCondition.textContent = "Actualizando información...";
+
+        const response = await fetch(API_URL);
+
+        if (!response.ok) {
+          throw new Error("Error al consultar Open-Meteo");
+        }
+
+        const data = await response.json();
+        const current = data.current;
+        const temperature = current.temperature_2m;
+        const apparentTemperature = current.apparent_temperature;
+        const weatherCode = current.weather_code;
+        const weather = getWeatherDescription(weatherCode);
+        const recommendation = getWeatherMessage(temperature);
+
+        weatherTemperature.textContent = `${Math.round(temperature)}°`;
+
+        weatherIcon.className = `bi ${weather.icon}`;
+
+        weatherCondition.textContent = `${weather.description} · Sensación térmica: ${Math.round(apparentTemperature)} °C`;
+
+        weatherTitle.textContent = recommendation.title;
+        weatherMessage.textContent = recommendation.message;
+
+        const updateTime = new Date(current.time);
+
+        weatherUpdated.textContent =
+          `Actualizado a las ${updateTime.toLocaleTimeString("es-CO", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+          })}`;
+
+      } catch (error) {
+
+        console.error("Error al consultar el clima:", error);
+
+        weatherTemperature.textContent = "--°";
+        weatherCondition.textContent = "Clima temporalmente no disponible";
+
+        weatherTitle.textContent = "¡Siempre es buen momento para un postre!";
+
+        weatherMessage.textContent = "No pudimos consultar la temperatura en este momento, pero nuestros sabores siguen esperándote.";
+
+        weatherUpdated.textContent = "Intenta nuevamente más tarde.";
+      }
+    }
+
+    loadWeather();
+    setInterval(loadWeather, 30 * 60 * 1000);
+  }
 });
