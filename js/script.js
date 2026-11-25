@@ -101,22 +101,22 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       turron: {
         name: "Turrón Crocante de Almendras", category: "Turrones", flavor: "Textura crocante",
-        price: "$11.000", image: null, visualClass: "image-turron", alt: "Ilustración de turrón",
+        price: "$11.000", image: "../assets/images/turron_almendras.png", alt: "Ilustración de turrón",
         description: "Una alternativa dulce con una textura crocante. La fotografía y los datos finales deben actualizarse con el producto real del negocio."
       },
       vainilla: {
         name: "Helado de Vainilla", category: "Helados", flavor: "Clásico suave y cremoso",
-        price: "$9.000", image: null, visualClass: "image-vanilla", alt: "Ilustración de helado de vainilla",
+        price: "$9.000", image: "../assets/images/helado_vainilla.png", alt: "Ilustración de helado de vainilla",
         description: "Un sabor clásico, suave y versátil para disfrutar en distintos momentos. Consulta las presentaciones disponibles."
       },
       coco: {
         name: "Paleta de Coco", category: "Paletas", flavor: "Cremosa y refrescante",
-        price: "$7.500", image: null, visualClass: "image-coconut", alt: "Ilustración de paleta de coco",
+        price: "$7.500", image: "../assets/images/paleta_coco.png", alt: "Ilustración de paleta de coco",
         description: "Una opción refrescante con sabor a coco. Confirma disponibilidad y presentación directamente con DeliHelados."
       },
       pistacho: {
         name: "Helado de Pistacho", category: "Helados", flavor: "Notas suaves de frutos secos",
-        price: "$18.000", image: null, visualClass: "image-pistachio", alt: "Ilustración de helado de pistacho",
+        price: "$18.000", image: "../assets/images/helado_pistacho.png", alt: "Ilustración de helado de pistacho",
         description: "Un sabor de perfil delicado para quienes buscan probar algo diferente. Consulta ingredientes y disponibilidad con el negocio."
       }
     };
