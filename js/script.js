@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         weatherTitle.textContent = "¡Siempre es buen momento para un postre!";
 
-        weatherMessage.textContent = "No pudimos consultar la temperatura en este momento, pero nuestros sabores siguen esperándote.";
+        weatherMessage.textContent = "No pudimos consultar la temperatura en este momento.";
 
         weatherUpdated.textContent = "Intenta nuevamente más tarde.";
       }
